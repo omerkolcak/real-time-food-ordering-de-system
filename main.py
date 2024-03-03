@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # create the tables
     create_database_tables(conn,cur)
     # generate user data and insert it into database
-    for user_id in range(344,NUMBER_OF_USERS):
+    for user_id in range(NUMBER_OF_USERS):
         user_data, address_data = generate_user_data(user_id,ADDRESS_ID)
         conn = insert_address(conn,cur,address_data)
         conn = insert_users(conn,cur,user_data)
