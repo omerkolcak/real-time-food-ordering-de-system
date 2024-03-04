@@ -17,19 +17,18 @@ def create_single_order(conn,restaurants,users,date):
     """
     user = random.choice(users)
     restaurant = random.choice(restaurants)
-    # restaurant = restaurants[0]
 
     # randomly generate order for choosen user and restaurant
     global ORDER_ID
     order, order_items = generate_order(cur,user,restaurant,ORDER_ID,date)
     # insert order into database
-    conn = insert_orders(conn,cur,order)
+    # conn = insert_orders(conn,cur,order)
     # insert order items into database
     for item in order_items:
         global ORDER_MENU_ITEM_ID
         
         item['order_item_id'] = ORDER_MENU_ITEM_ID
-        conn = insert_order_items(conn,cur,item)
+        # conn = insert_order_items(conn,cur,item)
 
         ORDER_MENU_ITEM_ID += 1
     
@@ -46,7 +45,7 @@ def simulate_food_ordering_system(conn,cur,start_date=None,end_date=None):
     assert end_date > start_date
 
     # fetch all the restaurant and users from the database.
-    restaurants = fetch_records_from_database(cur,'restaurants')
+    restaurants = fetch_records_from_database(cur,'restaurants')[:3]
     users = fetch_records_from_database(cur,'users')
 
     current_date = start_date
