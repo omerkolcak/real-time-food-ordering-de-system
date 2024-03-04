@@ -2,7 +2,7 @@ import re
 from kafka import KafkaConsumer
 import json
 
-MENU_ITEM_ID = 9963
+MENU_ITEM_ID = 0
 
 def create_database_tables(conn,cur):
     """

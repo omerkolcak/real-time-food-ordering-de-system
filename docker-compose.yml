@@ -1,20 +1,5 @@
 version: '3'
 
-# x-spark-common: &spark-common
-#   image: bitnami/spark:latest
-#   volumes:
-#     - ./jobs:/opt/bitnami/spark/jobs
-#   command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
-#   depends_on: 
-#     - spark-master
-#   environment:
-#     SPARK_MODE: Worker
-#     SPARK_WORKER_CORES: 2
-#     SPARK_WORKER_MEMORY: 1g
-#     SPARK_MASTER_URL: spark://spark-master:7077
-#   networks:
-#     - datamasterylab
-
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
