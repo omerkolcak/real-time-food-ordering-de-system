@@ -161,7 +161,7 @@ def generate_order(cur,user=None,restaurant=None,ORDER_ID=0,order_datetime=None)
     # insert order items into database
     order_items = []
     for item in item_dict:
-        order_item = {'fk_menu_item': item, 'fk_order': 0, 'item_quantity': item_dict[item]}
+        order_item = {'fk_menu_item': item, 'fk_order': ORDER_ID, 'item_quantity': item_dict[item]}
         order_items.append(order_item)
 
     return order, order_items

@@ -241,8 +241,6 @@ def fetch_data_from_kafka(consumer):
 
     # Extract data from received messages
     for message in messages.values():
-        print(message)
         for sub_message in message:
-            print(sub_message.value)
             data.append(sub_message.value)
     return data
